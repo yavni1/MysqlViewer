@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MySqlProject.UserControls.DataPresenter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MySqlProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" SelectedItem="{Binding DatabaseChoice}" x:Name="cmbTables_Copy" Margin="62,12,61,0" VerticalAlignment="Top" ItemsSource="{Binding Databases, Mode=TwoWay}" />
+
+        <ComboBox Grid.Row="0" SelectedItem="{Binding Choice}" Margin="62,47,61,0" VerticalAlignment="Top" ItemsSource="{Binding Tables,Mode=TwoWay}" />
+        <DataGrid Grid.Row="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  AutoGenerateColumns="True" ItemsSource="{Binding Table,Mode=TwoWay}" />
+        <TextBlock HorizontalAlignment="Left" Margin="20,15,0,0" TextWrapping="Wrap" Text="DB" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,50,0,0" TextWrapping="Wrap" Text="Tables" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
